@@ -1,0 +1,39 @@
+body {
+    padding: 10px;
+}
+* {
+    word-wrap: break-word;
+}
+#listings {
+    width: 90%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#listing_item {
+    box-sizing: border-box;
+    height: 200px;
+    width: 460px;
+    border: 1px solid green;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    float: left;
+}
+
+#item_image {
+    position: relative;
+    float: left;
+    height: inherit;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+#item__content {
+    position: relative;
+    float: left;
+    height: 100%;
+    box-sizing: border-box;
+    margin-left: 5px;
+}

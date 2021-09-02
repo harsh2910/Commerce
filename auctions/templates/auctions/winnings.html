@@ -1,0 +1,22 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<h2>Your Winings</h2><br>
+<div class="container" id="listings">
+    {% for listing in listings %}
+        <div id="listing_item">
+            <div id="item_image" style="box-sizing: border-box;">
+                <img height="90%" src="{{ listing.url }}">
+            </div>
+            <div id="item_content">
+                <div style="height: 64px; overflow: hidden"><h4>{{ listing.name }}</h4></div>
+                <p>{{ listing.short }}</p>
+                <p><b>${{ listing.bid }}</b></p>
+                <a href="{% url 'listing_page' listing.id %}" id="bid"><button class="btn btn-outline-success">View</button></a>
+            </div>
+        </div>
+    {% empty %}
+        <h3>No Winnings</h3>
+    {% endfor %}
+</div>    
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "auctions/layout.html" %}
+{% block body %}
+    <div class="container">
+        <h2 style="text-align: center">YOU WON</h2>
+        <h2>Listing: {{ listing.name }}</h2><br>
+        <div class="container">
+            <img src="{{ listing.url }}">
+        </div><br>
+        <p><b>Description:</b> {{ listing.description }}</p>
+        <h3>Your Bid: ${{ listing.bid }}</h3>
+        <p><b>Details:</b>
+            <ul>
+                <li><b>Owner:</b>{{ listing.user.username }}</li>
+                {% if listing.category %}
+                    <li><b>Category:</b>{{ listing.category }}</li>
+                {% endif %}
+            </ul>
+        </p>
+        <div>
+            <h4>Comments:</h4>
+            {% for comment in comments %}
+                <div id="comment_item">
+                    <p><b>{{ comment.user.username }}</b></p>
+                    <p>{{ comment.message }}</p>
+                </div>
+            {% empty %}
+                No comments present
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
